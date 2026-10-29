@@ -29,8 +29,8 @@ export ANDROID_NDK_HOME
 # Prefer a JDK 21 installation if the shell's default is newer.
 if [ ! -x "${JAVA_HOME:-/nonexistent}/bin/java" ] || ! "${JAVA_HOME}/bin/java" -version 2>&1 | grep -qE '"(17|18|19|20|21)\.'; then
     for candidate in \
+        $(find "$HOME/.local/share/mise/installs/java" -mindepth 1 -maxdepth 1 -type d -name '21*' 2>/dev/null | sort -V -r) \
         "$HOME/.local/share/mise/installs/java/temurin-21" \
-        "$HOME/.local/share/mise/installs/java/21.0.9+10.0.LTS" \
         "/usr/lib/jvm/java-21-openjdk"; do
         if [ -x "$candidate/bin/java" ]; then
             export JAVA_HOME="$candidate"

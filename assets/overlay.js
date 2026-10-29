@@ -17,7 +17,7 @@
     link.style.cssText = [
       "position:fixed",
       "left:14px",
-      "bottom:calc(14px + env(safe-area-inset-bottom, 0px))",
+      "bottom:calc(44px + env(safe-area-inset-bottom, 0px))",
       "width:44px",
       "height:44px",
       "border-radius:50%",
